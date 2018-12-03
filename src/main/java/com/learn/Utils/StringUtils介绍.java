@@ -1,4 +1,4 @@
-package com.learn;
+package com.learn.Utils;
 
 import org.apache.commons.lang3.StringUtils;
 
