@@ -152,10 +152,7 @@ public class StringUtils介绍 {
         System.out.println(StringUtils.removeEnd("www.baidu.com", ".com"));
         //移除所有相同的部分
         System.out.println(StringUtils.remove("www.baidu.com/baidu", "bai"));
-        //移除结尾字符为"\n", "\r", 或者 "\r\n".
-        System.out.println(StringUtils.chomp("abcrabc\r"));
-        //也是移除，未解。去结尾相同字符
-        System.out.println(StringUtils.chomp("baidu.com", "com"));
+
         //去掉末尾最后一个字符.如果是"\n", "\r", 或者 "\r\n"也去除
         System.out.println(StringUtils.chop("wwe.baidu"));
         //替换~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
