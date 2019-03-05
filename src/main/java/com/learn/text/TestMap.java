@@ -18,7 +18,5 @@ public class TestMap  {
             System.out.println("#######");
             System.out.println(userMap.get(user));
         }
-
     }
-
 }
