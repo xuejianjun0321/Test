@@ -88,4 +88,111 @@ public class ListNodeService {
         return null;
     }
 
+
+    /**
+     * 1、你有两个用链表代表的整数，其中每个节点包含一个数字。数字存储按照在原来整数中相反的顺序，使得第一个数字位于链表的开头。写出一个函数将两个整数相加，用链表形式返回和。
+     *
+     * 给出两个链表 3->1->5->null 和 5->9->2->null，返回 8->0->8->null
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode addLists(ListNode l1, ListNode l2) {
+        // write your code here
+        ListNode dummy = new ListNode(-1);
+        ListNode p1 = l1;
+        ListNode p2 = l2;
+        ListNode p = dummy;
+        int flag = 0;
+        while (p1 != null || p2 != null) {
+            int temp = flag;
+            if (p1 != null) {
+                temp += p1.val;
+                p1 = p1.nextNode;
+            }
+            if (p2 != null) {
+                temp += p2.val;
+                p2 = p2.nextNode;
+            }
+            if (temp > 9) {
+                temp -= 10;
+                flag = 1;
+            } else {
+                flag = 0;
+            }
+            p.nextNode = new ListNode(temp);
+            p = p.nextNode;
+        }
+        if (flag == 1) {
+            p.nextNode = new ListNode(1);
+        }
+        return dummy.nextNode;
+    }
+
+    /**
+     * 2、假定用一个链表表示两个数，其中每个节点仅包含一个数字。假设这两个数的数字顺序排列，请设计一种方法将两个数相加，并将其结果表现为链表的形式。
+     *
+     * 给出 6->1->7 + 2->9->5。即，617 + 295。
+     *
+     * 返回 9->1->2。即，912 。
+     *
+     * 思路：翻转之后转化成上面的问题，然后计算结果，然后在翻转一次就行了
+     *
+     *
+     * ---------------------
+     * 作者：哎呦、不错哦
+     * 来源：CSDN
+     * 原文：https://blog.csdn.net/l1394049664/article/details/81350125
+     * 版权声明：本文为博主原创文章，转载请附上博文链接！
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode addLists2(ListNode l1, ListNode l2) {
+        // write your code here
+        ListNode l11 = reverse(l1);
+        ListNode l22 = reverse(l2);
+        ListNode p1 = l11;
+        ListNode p2 = l22;
+        ListNode dummy = new ListNode(-1);
+        ListNode p = dummy;
+        int flag = 0;
+        while (p1 != null || p2 != null) {
+            int temp = flag;
+            if (p1 != null) {
+                temp += p1.val;
+                p1 = p1.nextNode;
+            }
+            if (p2 != null){
+                temp += p2.val;
+                p2 = p2.nextNode;
+            }
+            if (temp > 9) {
+                temp -= 10;
+                flag = 1;
+            } else {
+                flag = 0;
+            }
+            ListNode node = new ListNode(temp);
+            p.nextNode = node;
+            p = p.nextNode;
+        }
+        if (flag == 1) {
+            ListNode node = new ListNode(1);
+            p.nextNode = node;
+        }
+        return reverse(dummy.nextNode);
+    }
+
+    public ListNode reverse (ListNode head) {
+        ListNode newhead = null;
+        while (head != null) {
+            ListNode temp = head.nextNode;
+            head.nextNode = newhead;
+            newhead = head;
+            head = temp;
+        }
+        return newhead;
+    }
+
 }
