@@ -8,7 +8,7 @@ public class 省市工具类 {
 
     //根据字符串数组，返回省份
     public static String provinceMatch(String content){
-        String[] provinces ={("北京"), ("天津"), ("上海"), ("重庆"), ("河北"), ("山西"), ("辽宁"), ("吉林"), ("黑龙江"), ("江苏"), ("浙江"), ("安徽"), ("福建"), ("江西"), ("山东"), ("河南"), ("湖北"), ("湖南"), ("广东"), ("海南"), ("四川"), ("贵州"), ("云南"), ("陕西"), ("甘肃"), ("青海"), ("台湾"),  ("广西"), ("内蒙"), ("西藏"), ("宁夏"), ("新疆")};
+        String[] provinces ={("澳门"),("香港"),("北京"), ("天津"), ("上海"), ("重庆"), ("河北"), ("山西"), ("辽宁"), ("吉林"), ("黑龙江"), ("江苏"), ("浙江"), ("安徽"), ("福建"), ("江西"), ("山东"), ("河南"), ("湖北"), ("湖南"), ("广东"), ("海南"), ("四川"), ("贵州"), ("云南"), ("陕西"), ("甘肃"), ("青海"), ("台湾"),  ("广西"), ("内蒙"), ("西藏"), ("宁夏"), ("新疆")};
 
         for (String province: provinces){
             if (content.contains(province)){
@@ -29,5 +29,18 @@ public class 省市工具类 {
         return "";
     }
 
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+      System.out.println(provinceMatch("香港特别行政区"));
+        StringBuffer buffer = new StringBuffer("香港特别行政区");
+        char firstCharacter = buffer.charAt(0);
+        char lastCharacter = buffer.charAt(buffer.length()-1);
+        System.out.println(firstCharacter);
+        System.out.println(lastCharacter);
+
+    }
 
 }

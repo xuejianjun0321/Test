@@ -5,6 +5,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 
+import static java.util.concurrent.Executors.*;
+
 /**
  * @author xuejianjun<xuejianjun @ corp.netease.com>
  * @since 2019/03/05 11:37
@@ -16,7 +18,7 @@ public class ProConTest {
         BlockingQueue<Integer> queue = new LinkedBlockingDeque<>();
 
         //2.建立线程池和线程
-        ExecutorService service = Executors.newCachedThreadPool();
+        ExecutorService service = newCachedThreadPool();
         Producer producer1 = new Producer(queue);
         Producer producer2 = new Producer(queue);
         Producer producer3 = new Producer(queue);
