@@ -18,7 +18,7 @@ public class 时间日期计算 {
     public static void main(String[] args){
 //        twoDateCirculation();
         获取过去时间();
-
+        System.out.println(1/10);
     }
 
 

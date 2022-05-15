@@ -34,7 +34,7 @@ public class 省市工具类 {
      * @param args
      */
     public static void main(String[] args) {
-      System.out.println(provinceMatch("香港特别行政区"));
+        System.out.println(provinceMatch("香港特别行政区"));
         StringBuffer buffer = new StringBuffer("香港特别行政区");
         char firstCharacter = buffer.charAt(0);
         char lastCharacter = buffer.charAt(buffer.length()-1);

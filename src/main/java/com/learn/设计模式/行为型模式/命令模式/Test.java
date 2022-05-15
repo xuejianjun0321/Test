@@ -8,8 +8,7 @@ package com.learn.设计模式.行为型模式.命令模式;
 public class Test {
 
     public static void main(String[] args){
-        Receiver receiver = new Receiver();
-        Command command = new MyCommand(receiver);
+        Command command = new MyCommand(new Receiver());
         Invoker invoker = new Invoker(command);
         invoker.action();
 
